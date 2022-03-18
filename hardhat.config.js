@@ -2,7 +2,8 @@
 require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-ethers");
 require("hardhat-contract-sizer");
-require("dotenv-safe").config();
+// require("dotenv-safe").config();
+require("dotenv").config({ silent: true });
 require("solidity-coverage");
 //require('./tasks/generateDiamondABI.js')
 
@@ -22,26 +23,26 @@ task("accounts", "Prints the list of accounts", async () => {
 // Go to https://buidler.dev/config/ to learn more
 module.exports = {
   networks: {
-    hardhat: {
-      forking: {
-        url: process.env.MATIC_URL,
-        // blockNumber: 16712208,
-        timeout: 1200000,
-      },
-    },
+    // hardhat: {
+    //   forking: {
+    //     url: process.env.MATIC_URL,
+    //     // blockNumber: 16712208,
+    //     timeout: 1200000,
+    //   },
+    // },
     localhost: {
-      timeout: 1600000,
+      // timeout: 1600000,
     },
 
-    matic: {
-      url: process.env.MATIC_URL,
-      // url: 'https://rpc-mainnet.maticvigil.com/',
-      accounts: [process.env.SECRET],
-      //   // blockGasLimit: 20000000,
-      //   blockGasLimit: 20000000,
-      gasPrice: 1000000000,
-      // timeout: 90000
-    },
+    // matic: {
+    //   url: process.env.MATIC_URL,
+    //   // url: 'https://rpc-mainnet.maticvigil.com/',
+    //   accounts: [process.env.SECRET],
+    //   //   // blockGasLimit: 20000000,
+    //   //   blockGasLimit: 20000000,
+    //   gasPrice: 1000000000,
+    //   // timeout: 90000
+    // },
     // mumbai: {
     //   url: 'https://rpc-mumbai.matic.today',
     //   accounts: [process.env.SECRET],
@@ -58,7 +59,7 @@ module.exports = {
       url: process.env.KOVAN_URL,
       accounts: [process.env.SECRET],
       gasPrice: 5000000000,
-      timeout: 200000000,
+      // timeout: 200000000,
     },
     // ethereum: {
     //   url: process.env.MAINNET_URL,
